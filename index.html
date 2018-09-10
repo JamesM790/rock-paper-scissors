@@ -11,19 +11,33 @@
       let numChoice = Math.floor(Math.random() * 10) - 1;
       let choice = "";
       if (numChoice < 3)
-        choice = "Rock";
+        choice = "rock";
       else if (numChoice < 6 && numChoice > 2)
-        choice = "Paper";
+        choice = "paper";
       else
-        choice = "Scissors";
+        choice = "scissors";
 
       return choice;
     }
 
-    console.log(computerPlay());
-
     function playRound(playerSelection, computerSelection) {
-      // Code here!
+      let outcome = '';
+      if (playerSelection === 'rock' && computerSelection === 'paper') {
+        outcome = "You Lose! Paper beats Rock";
+      }
+
+      else if (playerSelection === 'rock' && computerSelection === 'rock') {
+        outcome = "Tie! Rock vs Rock!";
+      }
+
+      else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+        outcome = "You Win! Rock beats Scissors";
+      }
+      else {
+        outcome = "Invalid!"
+      }
+
+      return outcome;
     }
 
     const playerSelection = 'rock';
