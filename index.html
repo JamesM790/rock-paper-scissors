@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Rock Paper Scissors Game</title>
+</head>
+<body>
+  <script>
+    function computerPlay() {
+      // Generate a number between 0 and 8
+      let numChoice = Math.floor(Math.random() * 10) - 1;
+      let choice = "";
+      if (numChoice < 3)
+        choice = "Rock";
+      else if (numChoice < 6 && numChoice > 2)
+        choice = "Paper";
+      else
+        choice = "Scissors";
+
+      return choice;
+    }
+
+    console.log(computerPlay());
+
+    function playRound(playerSelection, computerSelection) {
+      // Code here!
+    }
+
+    const playerSelection = 'rock';
+    const computerSelection = computerPlay();
+    console.log(playRound(playerSelection, computerSelection));
+
+  </script>
+</body>
+</html>
