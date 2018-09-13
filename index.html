@@ -22,17 +22,37 @@
 
     function playRound(playerSelection, computerSelection) {
       let outcome = '';
+      // If player chooses rock
       if (playerSelection === 'rock' && computerSelection === 'paper') {
         outcome = "You Lose! Paper beats Rock";
       }
-
       else if (playerSelection === 'rock' && computerSelection === 'rock') {
         outcome = "Tie! Rock vs Rock!";
       }
-
       else if (playerSelection === 'rock' && computerSelection === 'scissors') {
         outcome = "You Win! Rock beats Scissors";
       }
+      // If player chooses paper
+      else if (playerSelection === 'paper' && computerSelection === 'paper') {
+        outcome = "Tie! Paper vs Paper";
+      }
+      else if (playerSelection === 'paper' && computerSelection === 'rock') {
+        outcome = "You Win! Paper beats Rock";
+      }
+      else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+        outcome = "You Lose! Scissors beats Paper";
+      }
+      // If player chooses scissors
+      else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+        outcome = "You Win! Scissors beats Paper";
+      }
+      else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+        outcome = "You Lose! Rock beats Scissors";
+      }
+      else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
+        outcome = "Tie! Scissors vs Scissors!";
+      }
+      // If any issue occurs!
       else {
         outcome = "Invalid!"
       }
@@ -40,9 +60,14 @@
       return outcome;
     }
 
-    const playerSelection = 'rock';
+    //const playerSelection = 'rock';
+    let playerSelection = prompt('Rock, Paper, or Scissors?');
+    playerSelection = playerSelection.toLowerCase();
     const computerSelection = computerPlay();
+    console.log("Player has chosen: " + playerSelection);
+    console.log("Computer has chosen: " + computerSelection);
     console.log(playRound(playerSelection, computerSelection));
+
 
   </script>
 </body>
